@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Product {
+public:
+    int id;
+   string name;
+    double price;
+
+    Product(int id, const string& name, double price) : id(id), name(name), price(price) {}
+};
+
+class InventoryManagementSystem {
+private:
+   vector<Product> inventory;
+
+public:
+    void addProductToInventory(int id, const string& name, double price) {
+        Product newProduct(id, name, price);
+        inventory.push_back(newProduct);
+    }
+
+    void removeProductFromInventory(int id) {
+        auto it = remove_if(inventory.begin(), inventory.end(),
+            [id](const Product& p) { return p.id == id; });
+
+        inventory.erase(it, inventory.end());
+    }
+
+    void displayInventory() const {
+        cout << "Current Inventory:\n";
+        for (const auto& product : inventory) {
+            cout << "ID: " << product.id << " | Name: " << product.name << " | Price: $" << product.price << "\n";
+        }
+    }
+};
+
+int main() {
+    InventoryManagementSystem inventorySystem;
+
+    inventorySystem.addProductToInventory(1, "Laptop", 1200.00);
+    inventorySystem.addProductToInventory(2, "Smartphone", 800.00);
+    inventorySystem.addProductToInventory(3, "Headphones", 100.00);
+
+    inventorySystem.displayInventory();
+    inventorySystem.removeProductFromInventory(2);
+
+    inventorySystem.displayInventory();
+
+    return 0;
+}
