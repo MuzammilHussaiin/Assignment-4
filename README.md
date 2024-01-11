@@ -5,7 +5,12 @@ Output no 1:
 
 Output no 2:
 
+Part 1:
+
 ![image](https://github.com/MuzammilHussaiin/Assignment-4/assets/146858162/7c7d5065-19d5-41c1-9413-d3cd984b3588)
+
+Part 2:
+![image](https://github.com/MuzammilHussaiin/Assignment-4/assets/146858162/c54e4c85-8809-423e-834a-e43e5fb4dbc0)
 
 
 System Info:
